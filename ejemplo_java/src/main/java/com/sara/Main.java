@@ -1,5 +1,8 @@
 package com.sara;
 
+import java.util.Random;
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
         // Declaramos variables
@@ -35,8 +38,9 @@ public class Main {
         final int xdex = 0;
         System.out.println(xdex);
         // Si queremos declarar variables accesibles fuera del metodo
-       
-        main3(args);
+
+        // main3(args);
+        main5(args);
     }
 
     public static float ohNoRayos = 0.5f;
@@ -103,13 +107,61 @@ public class Main {
                         ? "SI ESTA"
                         : "NO ESTA"));
 
-// ACTIVIDAD: CUENTA CUANTOS CARACTERES HAY SIN ESPACIOS
-        String espacios = cadena.replaceAll("\\s", ""); 
+        // ACTIVIDAD: CUENTA CUANTOS CARACTERES HAY SIN ESPACIOS
+        String espacios = cadena.replaceAll("\\s", "");
         System.out.println(espacios.length());
-           
-// ACTIVIDAD: DADO 3 NUMEROS VERIFICA CUAL ES MAYOR
-        
+
+        // ACTIVIDAD: DADO 3 NUMEROS VERIFICA CUAL ES MAYOR
+
     }
 
-}
+    // INSERTAR DATOS EN LA CONSOLA (CLASE 3)
+    final static int maxRange = 10000;
 
+    public static void main4(String[] args) {
+
+        Scanner scan = new Scanner(System.in);
+        Random random = new Random();
+        System.out.println("Ingrese el valor minimo");
+        var min = scan.nextInt();
+        System.out.println("Ingrese el valor maximo");
+        var max = scan.nextInt();
+        int[] numbers = new int[maxRange];
+        for (int a = 0; a < numbers.length; a++) {
+            numbers[a] = random.nextInt(min, max + 1);
+        }
+        System.out.println("Ingrese la cantidad de numeros a buscar: ");
+        var counter = scan.nextInt();
+        for (int a = 0; a < counter; a++) {
+            System.out.println("Ingrese el indice a buscar [1 hasta " + maxRange + "]: ");
+            var index = scan.nextInt();
+            System.out.println("Oye el indice es: " + (index) + " = " + numbers[index - 1]);
+        }
+        scan.close();
+
+    }
+    
+    public static void main5(String[] args) {
+        Scanner scan = new Scanner(System.in);
+
+        System.out.print("Ingrese el Titulo del libro: ");
+        var titulo = scan.nextLine();
+        System.out.print("Ingrese el nombre del autor: ");
+        var autor = scan.nextLine();
+        System.out.print("Ingrese el anio de la publicacion: ");
+        var año = scan.nextInt();
+        System.out.print("¿Cual es el genero del libro?: ");
+        var genero = scan.nextLine();
+        scan.nextLine();
+        System.out.print("Ingrese el numero de paginas: ");
+        var pags = scan.nextInt();
+
+        System.out.println("Titulo: " +titulo);
+        System.out.println("Autor del libro: " +autor);
+        System.out.println("Año de publicacion: " +año);
+        System.out.println("Genero del libro: " +genero);
+        System.out.println("Numero de paginas: " +pags);
+        scan.close();
+    }
+    
+}
