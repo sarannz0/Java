@@ -269,6 +269,65 @@ public class Main {
         scan.close();
     }
 }
+
+
+// Crea una clase User con los atributos privados username y password. Implementa los métodos setUsername(String username), setPassword(String password) y checkPassword(String inputPassword) que compare contraseñas.
+
+    public class main3{
+        public static void main(String[] args) {
+            boolean flag = true;
+            User common = new User();
+            Admin admin = new Admin();
+            User user = new Admin();
+
+            while (flag) {
+                System.out.printl("""
+                *********  MENU  ********
+                * Ingrese la opcion deseada *
+                1. Ingrese su nombre
+                2. Ingrese su password
+                3. Validar password
+                4. Agregar permisos (ADMINISTRADORES)
+                5. Ver permisos (ADMINISTRADORES)
+                0. Salir
+                """);
+            switch (scan.nextInt()) {
+                case 6:
+                    System.out.printl(admin.showInfo());
+                    break;
+                case 5:
+                    System.out.println(admin.showPermissions());
+                    System.out.println((Admin)user.showPermissions());
+                    break;
+                case 4:
+                    scan.nextLine();
+                    var permiso = sacn.nextLine();
+                    var permisos = new String[]{"x","y","z"};
+                    //common.setPermissions();
+                    admin.setPermissions(permiso);
+                    ((Admin)user).setPermissions(permisos);
+                    //((Admin)common).setPermissions(permisos); X
+                    break;
+                case 1:
+                    scan.nextLine();
+                    var tempName = scan.nextLine();
+                    common.setUsername(tempName);
+                    admin.setUsername(tempName);
+                    user.setUsername(tempName);
+                    break;
+                case 2:
+                    scan.nextLine();
+                    var tempPassword = scan.nextLine();
+                    common.setPassword(tempPassword);
+                    admin.setPassword(tempPassword);
+                    user.setPassword(tempPassword);
+                    break;
+                case 3:
+                    scan.nextLine();
+                    var tempChechkPassword = scan.nextLine();
+            }
+        }
+    }
 }
  
 

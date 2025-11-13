@@ -14,10 +14,17 @@ public class User {
     }
 
     public void setPassword(String password) {
-        
+        this.password = password;
     }
 
     public void checkPassword(String inputPassword) {
-        
+        return password.equals(password);
     }
+
+    public void showInfo( ) {
+        return "Nombre de usuario: " + username;
+    }
+
+     0.0
 }
+
